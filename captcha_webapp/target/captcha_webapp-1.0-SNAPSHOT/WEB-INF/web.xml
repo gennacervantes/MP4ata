@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>BotDetect Captcha</servlet-name>
+        <servlet-class>com.captcha.botdetect.web.servlet.CaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BotDetect Captcha</servlet-name>
+        <url-pattern>/botdetectcaptcha</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mycompany.captcha_webapp.LoginServlet</servlet-class>
+        <init-param>
+            <param-name>DBUsername</param-name>
+            <param-value>GennaCervantes</param-value>
+        </init-param>
+        <init-param>
+            <param-name>DBPassword</param-name>
+            <param-value>Password123.</param-value>
+        </init-param>
+        <init-param>
+            <param-name>DBDriver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
